@@ -7,33 +7,32 @@ const submitButton = document.querySelector(`#submit-button`);
 let blogInfo = [];
 
 function init() {
-
   const storedInfo = JSON.parse(localStorage.getItem(`blogInfo`));
   
-  if(storeInfo != null) {
+  if(storedInfo !== null) {
     blogInfo = storedInfo;
   }
 }
 
-// function storeInfo() {
-
-//   localStorage.setItem(`blogInfo`, JSON.stringify(blogInfo));
-// }
+function storeInfo() {
+  localStorage.setItem(`blogInfo`, JSON.stringify(blogInfo));
+}
 
 submitButton.addEventListener(`click`, function(event) {
-
-  let recentInfo = {
-    username: usernameInput.value,
-    title: titleInput.value,
-    content: contentInput.value,
-  };
-
   // //checking if any inputs were not entered
-  // if(usernameInput === `` || titleInput === `` || contentInput === ``) {
-  //   return;
-  // }
+  if(usernameInput.value === `` || titleInput.value === `` || contentInput.value === ``) {
+    return;
+  } else {
+    let recentInfo = {
+      username: usernameInput.value,
+      title: titleInput.value,
+      content: contentInput.value,
+    };
 
-  // storeInfo();
-  localStorage.setItem(`blogInfo`, JSON.stringify(recentInfo));
+    blogInfo.push(recentInfo);
+
+    storeInfo();
+  }
 });
 
+init();
