@@ -33,6 +33,7 @@ header {
   left: 0;
   right: 0;
   bottom: 0;
+  border-radius: 2em;
   cursor: pointer;
   background-color: #ccc;
   -webkit-transition: .4s;
@@ -47,6 +48,7 @@ header {
   left: 4px;
   bottom: 4px;
   background-color: white;
+  border-radius: 50%;
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -92,10 +94,12 @@ h2 {
 }
 
 label {
-  display: block;
+  display: inline-block;
+  width: 100%;
   padding: 1%;
   font-size: 150%;
-  width: 50%;
+  width: 100%;
+  text-align: center;
 }
 
 .card input {
@@ -107,9 +111,17 @@ label {
 textarea {
   height: 10em;
   width: 60%;
-  margin-bottom: 5%;
+  margin-bottom: 20%;
 }
 
+#submit-button {
+  text-align: center;
+  font-size: 150%;
+}
+
+.blog-submit:hover input{
+  cursor: pointer;
+}
 
 
 
