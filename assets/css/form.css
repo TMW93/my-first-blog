@@ -11,6 +11,9 @@ header {
   margin-bottom: 3em;
   display: flex;
   flex-direction: column;
+  background-image: url(../images/light-mode-stock-image.jpeg);
+  background-size: cover;
+  background-position: center;
 }
 
 /* light mode dark mode switch */
