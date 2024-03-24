@@ -11,8 +11,10 @@ let blogInfo = [];
 function themeChange() {
   if(toggleTheme.checked) {
     document.documentElement.setAttribute(`data-theme`, `dark`);
+    themeDescript.textContent = `Dark mode`;
   } else {
     document.documentElement.setAttribute(`data-theme`, `light`);
+    themeDescript.textContent = `Light mode`;
   }
 }
 
