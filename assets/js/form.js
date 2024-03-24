@@ -3,8 +3,20 @@ const titleInput = document.querySelector(`#blog-title`);
 const contentInput = document.querySelector(`#blog-content`);
 const form = document.querySelector(`#input-form`);
 const submitButton = document.querySelector(`#submit-button`);
+const toggleTheme = document.querySelector(`#theme-toggle`);
+const themeDescript = document.querySelector(`#theme-descript`);
 
 let blogInfo = [];
+
+function themeChange() {
+  if(toggleTheme.checked) {
+    document.documentElement.setAttribute(`data-theme`, `dark`);
+  } else {
+    document.documentElement.setAttribute(`data-theme`, `light`);
+  }
+}
+
+toggleTheme.addEventListener(`change`, themeChange);
 
 function init() {
   const storedInfo = JSON.parse(localStorage.getItem(`blogInfo`));
