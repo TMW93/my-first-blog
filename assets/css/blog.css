@@ -9,6 +9,8 @@
   --background-colour: #fff;
   --header-text-colour: black;
   --form-text-colour: black;
+  --blog-border-colour: black;
+  --link-text-colour: rgb(58, 53, 151);
 }
 
 /* light mode styles */
@@ -17,6 +19,7 @@ html[data-theme = 'light'] {
   --header-text-colour: black;
   --form-text-colour: black;
   --blog-border-colour: black;
+  --link-text-colour: rgb(58, 53, 151);
 }
 
 /* dark-mode styles */
@@ -25,6 +28,7 @@ html[data-theme = 'dark'] {
   --header-text-colour: #fff;
   --form-text-colour: #9fb1b9;
   --blog-border-colour: rgb(58, 53, 151);
+  --link-text-colour: #9fb1b9;
 }
 
 /* body styles */
@@ -68,6 +72,7 @@ header p {
   position: absolute;
   top: 0.5%;
   right: 0.5%;
+  padding: 1%;
 }
 
 .back-button:hover button {
@@ -128,4 +133,22 @@ header p {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);
+}
+
+/* footer styles */
+ footer {
+  position: relative;
+ }
+
+ footer h2 {
+  color: var(--header-text-colour);
+ }
+
+#developer-info li {
+  list-style: none;
+  color: var(--header-text-colour);
+}
+
+#developer-info a {
+  color: var(--link-text-colour);
 }

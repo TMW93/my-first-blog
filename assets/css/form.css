@@ -17,7 +17,7 @@ html[data-theme = 'light'] {
   --background-colour: #fff;
   --header-text-colour: black;
   --form-text-colour: #a2c0cd;
-  --form-colour: rgb(14, 10, 87);
+  --form-colour: rgb(77, 75, 99);
 }
 
 /* dark-mode styles */
