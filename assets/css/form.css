@@ -11,12 +11,14 @@
   --form-text-colour: #212a2e
 }
 
+/* light mode styles */
 html[data-theme = 'light'] {
   --background-colour: #fff;
   --header-text-colour: #fff;
   --form-text-colour: #212a2e;
 }
 
+/* dark-mode styles */
 html[data-theme = 'dark'] {
   --background-colour: #212a2e;
   --header-text-colour: #fff;

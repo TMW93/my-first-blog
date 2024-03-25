@@ -8,19 +8,37 @@ const themeDescript = document.querySelector(`#theme-descript`);
 
 let blogInfo = [];
 
+// changes colour theme if the switch is toggled
 function themeChange() {
   if(toggleTheme.checked) {
     document.documentElement.setAttribute(`data-theme`, `dark`);
     themeDescript.textContent = `Dark mode`;
+    localStorage.setItem(`theme`, `dark`);
   } else {
     document.documentElement.setAttribute(`data-theme`, `light`);
     themeDescript.textContent = `Light mode`;
+    localStorage.setItem(`theme`, `light`);
   }
 }
 
 toggleTheme.addEventListener(`change`, themeChange);
 
+//gets stored theme
+function theme() {
+  const currentTheme = localStorage.getItem(`theme`);
+  if(currentTheme) {
+    document.documentElement.setAttribute(`data-theme`, currentTheme);
+
+    if(currentTheme === `dark`) {
+      toggleTheme.checked = true;
+      themeChange();
+    }
+  }
+}
+
+
 function init() {
+  theme();
   const storedInfo = JSON.parse(localStorage.getItem(`blogInfo`));
   
   if(storedInfo !== null) {
