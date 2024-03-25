@@ -5,6 +5,7 @@ const form = document.querySelector(`#input-form`);
 const submitButton = document.querySelector(`#submit-button`);
 const toggleTheme = document.querySelector(`#theme-toggle`);
 const themeDescript = document.querySelector(`#theme-descript`);
+const blogContainer = document.querySelector(`#blog-container`);
 
 let blogInfo = [];
 
