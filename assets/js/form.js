@@ -53,6 +53,8 @@ function storeInfo() {
 submitButton.addEventListener(`click`, function(event) {
   // //checking if any inputs were not entered
   if(usernameInput.value === `` || titleInput.value === `` || contentInput.value === ``) {
+    event.preventDefault();
+    alert(`All inputs must be filled.`);
     return;
   } else {
     let recentInfo = {
