@@ -38,7 +38,8 @@ function showInfo() {
     const blogEntry = blogInfo[i];
     //create a box to contain the blog entry
     const postContainer = document.createElement(`div`);
-    postContainer.setAttribute(`style`, `display: flex; flex-direction: column; margin-bottom: 2%; align-items: center; border: 0.2em solid var(--blog-border-colour); color: var(--form-text-colour);`);
+    postContainer.setAttribute(`class`, `post-box`);
+    postContainer.setAttribute(`style`, `display: flex; flex-direction: column; width: 100%; margin-bottom: 2%; border: 0.2em solid var(--blog-border-colour); color: var(--form-text-colour);`);
     blogContainer.appendChild(postContainer);
 
     //create a title for the blog entry
@@ -55,8 +56,13 @@ function showInfo() {
     //create a watermark for the author
     let blogUser = document.createElement(`p`);
     blogUser.textContent = `Posted by: ${blogEntry.username}`;
-    blogUser.setAttribute(`style`, `font-style: italic; text-align: right; color: var(--form-text-colour);`);
-   postContainer.appendChild(blogUser);
+    blogUser.setAttribute(`style`, `font-style: italic; text-align: right; color: var(--form-text-colour); margin-right: 1%;`);
+    postContainer.appendChild(blogUser);
+
+    const button = document.createElement(`button`);
+    button.textContent = `Clear This Post`;
+    postContainer.appendChild(button);
+    button.setAttribute(`style`, `position: absolute; right: 1.5%; bottom 0; padding: 0.5%;`);
   }
 }
 

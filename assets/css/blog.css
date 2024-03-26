@@ -135,6 +135,14 @@ header p {
   transform: translateX(26px);
 }
 
+/* main styles */
+
+#blog-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /* footer styles */
  footer {
   position: relative;
