@@ -19,6 +19,10 @@ function themeChange() {
 
 toggleTheme.addEventListener(`change`, themeChange);
 
+function storeInfo() {
+  localStorage.setItem(`blogInfo`, JSON.stringify(blogInfo));
+}
+
 //gets stored theme
 function theme() {
   const currentTheme = localStorage.getItem(`theme`);
@@ -45,12 +49,13 @@ function showInfo() {
     //create a title for the blog entry
     let blogTitle = document.createElement(`h2`);
     blogTitle.textContent = blogEntry.title;
-    blogTitle.setAttribute(`style`, `text-decoration: underline; font-size: 175%; margin: 0; color: var(--form-text-colour);`);
+    blogTitle.setAttribute(`style`, `text-decoration: underline; font-size: 175%; margin: 2% 0 0 2%; color: var(--form-text-colour);`);
     postContainer.appendChild(blogTitle);
 
     //create a box to hold the blog content
     let blogContent = document.createElement(`p`);
     blogContent.textContent = blogEntry.content;
+    blogContent.setAttribute(`style`, `overflow: auto; margin-left: 2%;`);
     postContainer.appendChild(blogContent);
 
     //create a watermark for the author
@@ -59,12 +64,27 @@ function showInfo() {
     blogUser.setAttribute(`style`, `font-style: italic; text-align: right; color: var(--form-text-colour); margin-right: 1%;`);
     postContainer.appendChild(blogUser);
 
+    // create a button to allow deletion of posts
     const button = document.createElement(`button`);
     button.textContent = `Clear This Post`;
+    button.setAttribute(`style`, `position: absolute; right: 1.5%; bottom 0.5%; width: fit-content; padding: 0.5%;`);
     postContainer.appendChild(button);
-    button.setAttribute(`style`, `position: absolute; right: 1.5%; bottom 0; padding: 0.5%;`);
   }
 }
+
+// Delete Posts
+blogContainer.addEventListener(`click`, function(event) {
+  const element = event.target;
+
+  if(element.matches(`button`)) {
+    const index = element.parentElement.getAttribute('data-index');
+    blogInfo.splice(index, 1);
+
+    storeInfo();
+    location.reload();
+    showInfo();
+  }
+});
 
 function init() {
   theme();

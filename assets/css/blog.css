@@ -37,6 +37,7 @@ body {
   display: flex;
   flex-direction: column;
   font-family: monospace, Arial, sans-serif;
+  line-height: 1.5;
 }
 
 /* header styles */
@@ -46,9 +47,6 @@ header {
   margin-bottom: 3em;
   position: relative;
   flex-direction: column;
-  /* background-image: url(../images/light-mode-stock-image.jpeg);
-  background-size: cover;
-  background-position: center; */
   height: 12em;
 }
 
@@ -75,7 +73,7 @@ header p {
   padding: 1%;
 }
 
-.back-button:hover button {
+button:hover {
   cursor: pointer;
 }
 
@@ -136,7 +134,6 @@ header p {
 }
 
 /* main styles */
-
 #blog-container {
   display: flex;
   flex-direction: column;
@@ -150,6 +147,7 @@ header p {
 
  footer h2 {
   color: var(--header-text-colour);
+  margin-left: 1%;
  }
 
 #developer-info li {
@@ -159,4 +157,10 @@ header p {
 
 #developer-info a {
   color: var(--link-text-colour);
+}
+
+@media only screen and (max-width: 800px) {
+  main {
+    width: 80vw;
+  }
 }
