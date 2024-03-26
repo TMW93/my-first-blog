@@ -25,7 +25,7 @@ toggleTheme.addEventListener(`change`, themeChange);
 
 //gets stored theme
 function theme() {
-  const currentTheme = localStorage.getItem(`theme`);
+  let currentTheme = localStorage.getItem(`theme`);
   if(currentTheme) {
     document.documentElement.setAttribute(`data-theme`, currentTheme);
 
@@ -33,6 +33,10 @@ function theme() {
       toggleTheme.checked = true;
       themeChange();
     }
+  //if it's the first time opening the webpage it defaults to light mode  
+  } else {
+    currentTheme = `light`;
+    themeChange();
   }
 }
 
